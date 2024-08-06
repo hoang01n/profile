@@ -1,15 +1,4 @@
-// import {defineConfig} from "vite";
-// import react from "@vitejs/plugin-react-swc";
-// import path from "path";
-// // https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [react()],
-//   resolve: {
-//     alias: {
-//       "~": path.resolve(__dirname, "src/"),
-//     },
-//   },
-// });
+
 import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -25,19 +14,5 @@ export default defineConfig({
       "~": path.resolve(__dirname, "src/"),
     },
   },
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.(js|jsx)$/,
-  //       exclude: /node_modules/,
-  //       use: {
-  //         loader: "babel-loader",
-  //         options: {
-  //           presets: ["@babel/preset-env", "@babel/preset-react"],
-  //         },
-  //       },
-  //     },
-  //     // Các loader khác...
-  //   ],
-  // },
+
 });
