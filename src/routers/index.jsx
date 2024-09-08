@@ -1,7 +1,7 @@
 import {lazy} from "react";
 import {Route, Routes, useLocation} from "react-router-dom";
 //modal
-import ProjectCardModal from "../page/Project/ProjectCardModal";
+import ProjectCardModal from "~/page/Project/ProjectCardModal";
 
 //page
 const Home = lazy(() => import("../page/Home"));
