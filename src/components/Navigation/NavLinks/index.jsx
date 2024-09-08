@@ -10,14 +10,14 @@ const NavLinks = () => {
           Home
         </NavLink>
       </NavLinksItem>
-      <NavLinksItem key="About">
+      {/* <NavLinksItem key="About">
         <NavLink
           className={({isActive}) => (isActive ? "active" : "")}
           to="/About"
         >
           About
         </NavLink>
-      </NavLinksItem>
+      </NavLinksItem> */}
       <NavLinksItem key="project">
         <NavLink
           className={({isActive}) => (isActive ? "active" : "")}
@@ -34,14 +34,14 @@ const NavLinks = () => {
           Resume
         </NavLink>
       </NavLinksItem>
-      <NavLinksItem key="contact">
+      {/* <NavLinksItem key="contact">
         <NavLink
           className={({isActive}) => (isActive ? "active" : "")}
           to="/contact"
         >
           Contact
         </NavLink>
-      </NavLinksItem>
+      </NavLinksItem> */}
     </NavLinksList>
   );
 };

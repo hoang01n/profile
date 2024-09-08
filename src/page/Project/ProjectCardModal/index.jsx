@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import Modal from "../../../components/Modal";
 import Button from "../../../components/UIElements/Button";
 import {PROJECTS} from "../../../Constants/projects";
@@ -16,13 +16,27 @@ import {
 
 const ProjectCardModal = () => {
   const {id} = useParams();
-  const {image, title, links, technologies} = PROJECTS.find((p) => id === p.id);
-  const {isVisible, toggleModal} = useModal(true);
+  // const {image, title, links, technologies} = PROJECTS.find((p) => id === p.id);
+  // const {isVisible, toggleModal} = useModal(true);
+
+  // useEffect(() => {
+  //   toggleModal();
+  // }, []);
+  const location = useLocation();
+  const background = location.state && location.state.background;
+  const modalId = location.state && location.state.modalId;
+
+  const project = PROJECTS.find((p) => id === p.id);
+  const { isVisible, toggleModal } = useModal(!!background);
 
   useEffect(() => {
-    toggleModal();
-  }, []);
+    if (background && modalId === id) {
+      toggleModal();
+    }
+  }, [background, modalId, id, toggleModal]);
+  if (!project) return null;
 
+  const { image, title, links, technologies } = project;
   return (
     <Modal show={isVisible} onClose={toggleModal}>
       <ProjectCardModalContainer>
