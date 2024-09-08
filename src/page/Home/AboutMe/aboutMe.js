@@ -24,6 +24,9 @@ export const AboutContext = styled.p`
   strong {
     color: var(--txt-primary);
   }
+     @media ${device.laptop} {
+    font-size: 18px;
+  }
 `;
 export const AboutInner = styled.div`
   max-width: 1300px;
@@ -60,6 +63,9 @@ export const AboutLocaltion = styled.div`
   font-size: 16px;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
+     @media ${device.laptop} {
+    font-size: 18px;
+  }
 `;
 export const AboutActivity = styled.ul`
   color: var(--txt);

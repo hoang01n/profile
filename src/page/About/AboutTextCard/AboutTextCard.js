@@ -24,6 +24,9 @@ export const AboutContext = styled.p`
   strong {
     color: var(--txt-primary);
   }
+       @media ${device.laptop} {
+    font-size: 18px;
+  }
 `;
 export const AboutInner = styled.div`
   max-width: 1300px;
