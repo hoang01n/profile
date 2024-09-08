@@ -16,27 +16,27 @@ import {
 
 const ProjectCardModal = () => {
   const {id} = useParams();
-  // const {image, title, links, technologies} = PROJECTS.find((p) => id === p.id);
-  // const {isVisible, toggleModal} = useModal(true);
-
-  // useEffect(() => {
-  //   toggleModal();
-  // }, []);
-  const location = useLocation();
-  const background = location.state && location.state.background;
-  const modalId = location.state && location.state.modalId;
-
-  const project = PROJECTS.find((p) => id === p.id);
-  const { isVisible, toggleModal } = useModal(!!background);
+  const {image, title, links, technologies} = PROJECTS.find((p) => id === p.id);
+  const {isVisible, toggleModal} = useModal(true);
 
   useEffect(() => {
-    if (background && modalId === id) {
-      toggleModal();
-    }
-  }, [background, modalId, id, toggleModal]);
-  if (!project) return null;
+    toggleModal();
+  }, []);
+  // const location = useLocation();
+  // const background = location.state && location.state.background;
+  // const modalId = location.state && location.state.modalId;
 
-  const { image, title, links, technologies } = project;
+  // const project = PROJECTS.find((p) => id === p.id);
+  // const { isVisible, toggleModal } = useModal(!!background);
+
+  // useEffect(() => {
+  //   if (background && modalId === id) {
+  //     toggleModal();
+  //   }
+  // }, [background, modalId, id, toggleModal]);
+  // if (!project) return null;
+
+  // const { image, title, links, technologies } = project;
   return (
     <Modal show={isVisible} onClose={toggleModal}>
       <ProjectCardModalContainer>
