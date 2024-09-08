@@ -1,7 +1,7 @@
 import styled, {keyframes} from "styled-components";
 import {device} from "../../../styles/breakpoints";
-import logo from "~/assets/Images/avatarH.jpg";
-
+import logo from "~/assets/Images/avatar.jpg";
+import Story from "~/assets/Images/avatar.jpg";
 const ware = keyframes`
 0%{
  transform:rotate(0deg)
@@ -41,6 +41,8 @@ export const HeroContainer = styled.section`
   justify-content: center;
   padding: 7px 5%;
   z-index: -1;
+    padding-top: 100px;
+  padding-bottom: 100px;
   @media ${device.laptop} {
     padding-top: 20px;
   }
@@ -94,4 +96,33 @@ export const HeroWelcome = styled.span`
   color: var(--txt);
   text-transform: uppercase;
   letter-spacing: 4px;
+`;
+export const AboutStoryImageContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media ${device.laptop} {
+    width: 40%;
+  }
+`;
+export const AboutStoryImage = styled.img.attrs({
+  src: `${Story}`,
+})`
+  max-width: 100%;
+  height: 450px;
+`;
+export const InfoThumbnail = styled.div`
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0 35px;
+ margin-top: 100px;
+
+  @media ${device.laptop} {
+    width: 25%;
+  }
 `;

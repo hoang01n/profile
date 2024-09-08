@@ -12,6 +12,7 @@ export const PROJECTS = [
     },
     links: {
       // site: 'https://apiko-marketplace-app-snaichuk.herokuapp.com/',
+      site:"https://lehoang.vercel.app/",
       repo: "https://github.com/hoang01n",
     },
     technologies: [
@@ -33,6 +34,6 @@ export const PROJECTS = [
       site: "https://movie-react-app-orpin.vercel.app/",
       repo: "https://github.com/hoang01n/Movie-react",
     },
-    technologies: ["react", "", ""],
+    technologies: ["react", "sass", "swiper"],
   },
 ];
