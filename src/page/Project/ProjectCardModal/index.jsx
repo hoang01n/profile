@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import {useLocation, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import Modal from "../../../components/Modal";
 import Button from "../../../components/UIElements/Button";
 import {PROJECTS} from "../../../Constants/projects";
@@ -18,15 +18,23 @@ const ProjectCardModal = () => {
   const { id } = useParams();
   const location = useLocation();
   const background = location.state?.background;
-  
-  const { image, title, links, technologies } = PROJECTS.find((p) => id === p.id);
+  const navigate = useNavigate();
+  const project = PROJECTS.find((p) => id === p.id);
   const { isVisible, toggleModal } = useModal(true);
-
+  const { image, title, links, technologies } = project;
   useEffect(() => {
     if (background) {
       toggleModal();
     }
   }, [background, toggleModal]);
+  useEffect(() => {
+    if (!location.state?.background) {
+      // Nếu truy cập trực tiếp, chuyển hướng về trang projects
+      navigate('/projects');
+    }
+  }, [location, navigate]);
+
+  if (!project) return null;
 
   if (!isVisible) return null;
   // const {id} = useParams();
