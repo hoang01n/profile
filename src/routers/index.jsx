@@ -26,14 +26,14 @@ const BaseRoutes = () => {
         <Route path="/About" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      {
+{/*       {
         background && (
           <Routes>
             <Route path="/project/:id" element={<ProjectCardModal />} />
           </Routes>
         )
         //  <Route path="/project/:id" component={ProjectCardModal} />
-      }
+      } */}
     </>
   );
 };
