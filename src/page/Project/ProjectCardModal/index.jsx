@@ -31,8 +31,11 @@ const ProjectCardModal = () => {
     if (!location.state?.background) {
       // Nếu truy cập trực tiếp, chuyển hướng về trang projects
       navigate('/projects');
+    } else {
+      // Nếu có background state (nghĩa là đến từ trang projects), hiển thị modal
+      toggleModal();
     }
-  }, [location, navigate]);
+  }, [location, navigate, toggleModal]);
 
   if (!project) return null;
 
