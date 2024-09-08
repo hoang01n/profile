@@ -18,12 +18,12 @@ const ProjectCard = ({id, image = "", title, deprecations}) => {
       <Link 
                 to={{
                     pathname: `/project/${id}`,
-                    // state: {
-                    //     background: location,
-                    // },
+                    state: {
+                        background: location,
+                    },
                     
                 }}
-                state={{background: location, modalId: id }}
+                state={{background: location}}
             >
         <ProjectCardBox>
           <ProjectCardBoxThumbnail>
