@@ -15,13 +15,31 @@ import {
 } from "./ProjectCardModal";
 
 const ProjectCardModal = () => {
-  const {id} = useParams();
-  const {image, title, links, technologies} = PROJECTS.find((p) => id === p.id);
-  const {isVisible, toggleModal} = useModal(true);
+  const { id } = useParams();
+  const location = useLocation();
+  const background = location.state?.background;
+  
+  const { image, title, links, technologies } = PROJECTS.find((p) => id === p.id);
+  const { isVisible, toggleModal } = useModal(true);
 
   useEffect(() => {
-    toggleModal();
-  }, []);
+    if (background) {
+      toggleModal();
+    }
+  }, [background, toggleModal]);
+
+  if (!isVisible) return null;
+  // const {id} = useParams();
+ 
+
+  // const {image, title, links, technologies} = PROJECTS.find((p) => id === p.id);
+  // const {isVisible, toggleModal} = useModal();
+
+  // useEffect(() => {
+  
+  //   toggleModal();
+    
+  // }, []);
   // const location = useLocation();
   // const background = location.state && location.state.background;
   // const modalId = location.state && location.state.modalId;

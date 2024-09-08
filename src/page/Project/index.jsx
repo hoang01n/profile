@@ -5,7 +5,7 @@ import ProjectSection from "./ProjectSetion";
 const Project = () => {
   return (
     <MainLayout>
-      <ProjectSection></ProjectSection>
+<ProjectSection/>
     </MainLayout>
   );
 };
