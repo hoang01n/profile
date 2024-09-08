@@ -14,7 +14,17 @@ const ProjectCard = ({id, image = "", title, deprecations}) => {
   const location = useLocation();
   return (
     <ProjectCardItem key={id}>
-      <Link to={`/project/${id}`} state={{background: location, modalId: id }}>
+      {/* <Link to={`/project/${id}`} state={{background: location, modalId: id }}> */}
+      <Link 
+                to={{
+                    pathname: `/project/${id}`,
+                    // state: {
+                    //     background: location,
+                    // },
+                    
+                }}
+                state={{background: location, modalId: id }}
+            >
         <ProjectCardBox>
           <ProjectCardBoxThumbnail>
             <LazyLoadImage
