@@ -22,8 +22,8 @@ const BaseRoutes = () => {
         <Route path="/About" element={<About />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/projects" element={<Project />} />
-        <Route path="/project/:id" element={<ProjectCardModal />} />
-        <Route path="/About" element={<About />} />
+        {/* <Route path="/project/:id" element={<ProjectCardModal />} /> */}
+       
         <Route path="/contact" element={<Contact />} />
       </Routes>
       {
