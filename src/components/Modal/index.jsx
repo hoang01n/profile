@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from "react";
-import {useNavigate} from "react-router-dom";
+// import {useNavigate} from "react-router-dom";
 import {CSSTransition} from "react-transition-group";
 import {MdOutlineClose} from "react-icons/md";
 import {ModalClose, ModalContainer, ModalWrap, ModalBox} from "./Modal";
