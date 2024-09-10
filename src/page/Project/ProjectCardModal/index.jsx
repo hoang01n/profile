@@ -37,7 +37,8 @@ const ProjectCardModal = () => {
 
   const handleClose = () => {
     toggleModal();
-    navigate(background.pathname || '/projects');
+    // navigate(background.pathname || '/projects');
+    navigate(background ? background.pathname : '/projects');
   };
   // const {id} = useParams();
  
