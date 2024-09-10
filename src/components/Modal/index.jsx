@@ -6,19 +6,24 @@ import {ModalClose, ModalContainer, ModalWrap, ModalBox} from "./Modal";
 import Backdrop from "../UIElements/Backdrop";
 
 const Modal = ({children, show, onClose}) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const nodeRef = useRef(null);
 
-  const closeModal = (e) => {
-    onClose();
-    e.stopPropagation();
+  // const closeModal = (e) => {
+  //   onClose();
+  //   e.stopPropagation();
 
-    // Ngăn ngừa sự kiện click trên ModalBox gây ra đóng modal
-    if (e.target === e.currentTarget) {
-      onClose();
-      e.stopPropagation();
-      navigate(-1);
-    }
+  //   // Ngăn ngừa sự kiện click trên ModalBox gây ra đóng modal
+  //   if (e.target === e.currentTarget) {
+  //     onClose();
+  //     e.stopPropagation();
+  //     navigate(-1);
+  //   }
+  // };
+  const closeModal = (e) => {
+    e.stopPropagation();
+    onClose();
+    // navigate(-1);
   };
 
   useEffect(() => {
@@ -43,7 +48,7 @@ const Modal = ({children, show, onClose}) => {
           <ModalWrap
             onClick={() => {
               onClose();
-              navigate(-1);
+              // navigate(-1);
             }}
           >
             <ModalClose>
