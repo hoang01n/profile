@@ -17,29 +17,28 @@ import {
 const ProjectCardModal = () => {
   const { id } = useParams();
   const location = useLocation();
-  const background = location.state?.background;
   const navigate = useNavigate();
+  const background = location.state?.background;
+  
+  // const { image, title, links, technologies } = PROJECTS.find((p) => id === p.id);
   const project = PROJECTS.find((p) => id === p.id);
   const { isVisible, toggleModal } = useModal(true);
-  const { image, title, links, technologies } = project;
+
   useEffect(() => {
     if (background) {
       toggleModal();
     }
   }, [background, toggleModal]);
-  useEffect(() => {
-    if (!location.state?.background) {
-      // Nếu truy cập trực tiếp, chuyển hướng về trang projects
-      navigate('/projects');
-    } else {
-      // Nếu có background state (nghĩa là đến từ trang projects), hiển thị modal
-      toggleModal();
-    }
-  }, [location, navigate, toggleModal]);
 
+  // if (!isVisible) return null;
   if (!project) return null;
 
-  if (!isVisible) return null;
+  const { image, title, links, technologies } = project;
+
+  const handleClose = () => {
+    toggleModal();
+    navigate(background.pathname || '/projects');
+  };
   // const {id} = useParams();
  
 
@@ -67,7 +66,10 @@ const ProjectCardModal = () => {
 
   // const { image, title, links, technologies } = project;
   return (
-    <Modal show={isVisible} onClose={toggleModal}>
+    <Modal show={isVisible}
+    //  onClose={toggleModal}
+    onClose={handleClose}
+    >
       <ProjectCardModalContainer>
         <ProjectCardModalThumbnail>
           <LazyLoadImage
