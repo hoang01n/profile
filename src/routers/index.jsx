@@ -1,4 +1,4 @@
-import {lazy} from "react";
+import {lazy,Suspense} from "react";
 import {Route, Routes, useLocation} from "react-router-dom";  
 //modal
 // import ProjectCardModal from "../page/Project/ProjectCardModal";
@@ -30,7 +30,11 @@ const BaseRoutes = () => {
       {
         background && (
           <Routes>
-            <Route path="/project/:id" element={<ProjectCardModal />} />
+            <Route path="/project/:id" element=  {
+              <Suspense fallback={<div>Loading...</div>}>
+                <ProjectCardModal />
+              </Suspense>
+            } />
           </Routes>
         )
         //  <Route path="/project/:id" component={ProjectCardModal} />
