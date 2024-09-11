@@ -24,7 +24,9 @@ const ProjectCardModal = () => {
   const project = PROJECTS.find((p) => id === p.id);
   const { isVisible, toggleModal } = useModal(true);
 
+  console.log('ProjectCardModal rendered', { id, background, project });
   useEffect(() => {
+     console.log('useEffect triggered', { background });
     if (background) {
       toggleModal();
     }

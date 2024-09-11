@@ -2,10 +2,10 @@ import {lazy,Suspense} from "react";
 import {Route, Routes, useLocation} from "react-router-dom";  
 //modal
 // import ProjectCardModal from "../page/Project/ProjectCardModal";
-//  import ProjectCardModal from "../page/Project/ProjectCardModal";
+ import ProjectCardModal from "../page/Project/ProjectCardModal";
 //page
 const Home = lazy(() => import("../page/Home"));
-const ProjectCardModal = lazy( ()=>import("../page/Project/ProjectCardModal"));
+// const ProjectCardModal = lazy( ()=>import("../page/Project/ProjectCardModal"));
 const Resume = lazy(() => import("../page/Resume"));
 const About = lazy(() => import("../page/About"));
 const Contact = lazy(() => import("../page/Contact"));
@@ -23,7 +23,7 @@ const BaseRoutes = () => {
         <Route path="/About" element={<About />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/projects" element={<Project />} />
-        {/* <Route path="/project/:id" element={<ProjectCardModal />} /> */}
+        <Route path="/project/:id" element={<ProjectCardModal />} />
        
         <Route path="/contact" element={<Contact />} />
       </Routes>
