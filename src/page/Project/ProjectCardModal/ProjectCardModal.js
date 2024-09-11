@@ -8,6 +8,7 @@ export const ProjectCardModalContainer = styled.div`
   line-height: 1.5;
   word-wrap: break-word;
   color: var(--txt);
+
 `;
 
 export const ProjectCardModalFooter = styled.div`
