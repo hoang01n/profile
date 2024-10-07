@@ -2,7 +2,7 @@ import {lazy,Suspense} from "react";
 import {Route, Routes, useLocation} from "react-router-dom";  
 //modal
 // import ProjectCardModal from "../page/Project/ProjectCardModal";
- import ProjectCardModal from "../page/Project/ProjectCardModal";
+  import ProjectCardModal from "../page/Project/ProjectCardModal";
 //page
 const Home = lazy(() => import("../page/Home"));
 // const ProjectCardModal = lazy( ()=>import("../page/Project/ProjectCardModal"));
@@ -16,6 +16,7 @@ const BaseRoutes = () => {
   const location = useLocation();
   const background = location.state?.background;
 
+
   return (
     <>
       <Routes location={background || location}>
@@ -23,23 +24,18 @@ const BaseRoutes = () => {
         <Route path="/About" element={<About />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/projects" element={<Project />} />
-        <Route path="/project/:id" element={<ProjectCardModal />} />
-       
         <Route path="/contact" element={<Contact />} />
+        {/* <Route path="/project/:id" element={<ProjectCardModal />} /> */}
+        {/* {background && <Route path="/project/:id" element={<ProjectCardModal />} />} */}
+        </Routes>
+        {background && (
+      <Routes>
+        <Route path="/project/:id" element={<ProjectCardModal />} />
       </Routes>
-      {
-        background && (
-          <Routes>
-            <Route path="/project/:id" element=  {
-              <Suspense fallback={<div>Loading...</div>}>
-                <ProjectCardModal />
-              </Suspense>
-            } />
-          </Routes>
-        )
-        //  <Route path="/project/:id" component={ProjectCardModal} />
-      }
-    </>
+    )}
+  </>
+       
+   
   );
 };
 

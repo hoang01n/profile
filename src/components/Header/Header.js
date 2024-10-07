@@ -14,14 +14,18 @@
 
 // }
 import styled from "styled-components";
-
+import {device} from "../../styles/breakpoints";
 export const HeaderContainer = styled.header`
   position: absolute;
   top: 0;
   z-index: 999;
-  width: 100%;
+   width: 100%;
   background: transparent;
   transition: 0.3s;
+ 
+  @media ${device.laptop} {
+    padding: 0 15%;
+  }
 
   &.headerHighlight {
     position: fixed;

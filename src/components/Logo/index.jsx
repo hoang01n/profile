@@ -4,7 +4,7 @@ import {LogoContainer} from "./Logo";
 
 const Logo = () => {
   return (
-    <LogoContainer>
+    <LogoContainer to="/">
       <span>L</span>
       <span>NH</span>
     </LogoContainer>

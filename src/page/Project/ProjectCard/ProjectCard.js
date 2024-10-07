@@ -1,18 +1,4 @@
-// import styled from "styled-components";
 
-// import {device} from "../../../styles/breakpoints";
-
-// export const ProjectCardItem = styled.li``;
-// export const ProjectCardBox = styled.article`
-//   position: relative;
-//   padding: 1.25rem;
-
-// `;
-
-// export const ProjectCardThumbnail = styled.div``;
-// export const ProjectCardBoxContent = styled.div``;
-// export const ProjectCardBoxTitle = styled.h3``;
-// export const ProjectCardBoxDescription = styled.p``;
 import styled from "styled-components";
 import {device} from "../../../styles/breakpoints";
 
@@ -103,3 +89,43 @@ export const ProjectCardBoxTitle = styled.h3`
     font-size: 24px;
   }
 `;
+// import styled from "styled-components";
+
+// // Card container style
+// export const CardContainer = styled.div`
+//   width: 300px;
+//   padding: 16px;
+//   background-color: #fff;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   cursor: pointer;
+//   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+//   &:hover {
+//     transform: translateY(-10px);
+//     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+//   }
+// `;
+
+// // Card image style
+// export const CardImage = styled.img`
+//   width: 100%;
+//   height: 180px;
+//   object-fit: cover;
+//   border-radius: 4px;
+//   margin-bottom: 16px;
+// `;
+
+// // Card title style
+// export const CardTitle = styled.h3`
+//   font-size: 1.5rem;
+//   color: #333;
+//   margin-bottom: 8px;
+//   font-weight: 600;
+// `;
+
+// // Description style
+// export const CardDescription = styled.p`
+//   font-size: 1rem;
+//   color: #666;
+// `;

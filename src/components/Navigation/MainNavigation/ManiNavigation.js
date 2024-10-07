@@ -10,17 +10,17 @@ export const MainNavigationContainer = styled.div`
 
   ${device.laptop} {
     max-width: 1200px;
-    margin: auto;
-    padding: 0px 20%;
+    margin: auto; 
+  //  padding: 0px 20%; 
   }
   ${device.desktopL} {
-    padding: 0 10%;
+    padding: 0 0;
   }
 `;
 export const MainNavigationNav = styled.nav`
   display: none;
   visibility: hidden;
-  opacity: 2;
+  opacity: 0;
   @media ${device.laptop} {
     display: flex;
     margin-left: auto;

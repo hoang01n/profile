@@ -16,7 +16,7 @@ export const NavLinksItem = styled.li`
   /* color: var(--txt); */
   /* color: #fff; */
 
-  font-size: 20px;
+    font-size: 20px;
 
   a {
     text-decoration: none;
@@ -38,6 +38,7 @@ export const NavLinksItem = styled.li`
       left: 0;
       position: absolute;
       transform: translateX(-50px);
+        transition: .3s ease-in;
     }
     &:hover {
       color: var(--txt-primary);

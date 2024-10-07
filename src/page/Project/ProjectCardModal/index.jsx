@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
 import {LazyLoadImage} from "react-lazy-load-image-component";
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Modal from "../../../components/Modal";
 import Button from "../../../components/UIElements/Button";
 import {PROJECTS} from "../../../Constants/projects";
-import {useModal} from "../../../hooks/modalHook/modalHook";
+import useModal from "../../../hooks/modalHook/modalHook";
 import {
   ProjectCardModalFooter,
   ProjectCardModalContainer,
@@ -15,64 +15,21 @@ import {
 } from "./ProjectCardModal";
 
 const ProjectCardModal = () => {
-  const { id } = useParams();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const background = location.state?.background;
-  
-  // const { image, title, links, technologies } = PROJECTS.find((p) => id === p.id);
-  const project = PROJECTS.find((p) => id === p.id);
-  const { isVisible, toggleModal } = useModal(true);
+  const {id} = useParams();
+  const {image, title, links, technologies} = PROJECTS.find((p) => p.id === id);
+  const {isVisible, toggleModal} = useModal();
 
-  console.log('ProjectCardModal rendered', { id, background, project });
   useEffect(() => {
-     console.log('useEffect triggered', { background });
-    if (background) {
-      toggleModal();
-    }
-  }, [background, toggleModal]);
+    // console.log("id modal",id)
+    toggleModal(id);
+    return () => toggleModal(null); 
+  }, [id,toggleModal]);
 
-  // if (!isVisible) return null;
-  if (!project) return null;
-
-  const { image, title, links, technologies } = project;
-
-  const handleClose = () => {
-    toggleModal();
-    // navigate(background.pathname || '/projects');
-    navigate(background ? background.pathname : '/projects');
-  };
-  // const {id} = useParams();
- 
-
-  // const {image, title, links, technologies} = PROJECTS.find((p) => id === p.id);
-  // const {isVisible, toggleModal} = useModal();
-
-  // useEffect(() => {
-  
-  //   toggleModal();
-    
-  // }, []);
-  // const location = useLocation();
-  // const background = location.state && location.state.background;
-  // const modalId = location.state && location.state.modalId;
-
-  // const project = PROJECTS.find((p) => id === p.id);
-  // const { isVisible, toggleModal } = useModal(!!background);
-
-  // useEffect(() => {
-  //   if (background && modalId === id) {
-  //     toggleModal();
-  //   }
-  // }, [background, modalId, id, toggleModal]);
-  // if (!project) return null;
-
-  // const { image, title, links, technologies } = project;
   return (
-    <Modal show={isVisible}
-    //  onClose={toggleModal}
-    onClose={handleClose}
-    >
+    <Modal show={isVisible} 
+
+     onClose={toggleModal}
+     >
       <ProjectCardModalContainer>
         <ProjectCardModalThumbnail>
           <LazyLoadImage
