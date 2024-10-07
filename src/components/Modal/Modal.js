@@ -53,6 +53,6 @@ export const ModalBox = styled.div`
   background-color: var(--bg-secondary);
   border: var(--modal-border);
   border-radius: 0.25rem;
-  opacity: 0.9;
+  opacity: 1;
   color: var(--txt);
 `;

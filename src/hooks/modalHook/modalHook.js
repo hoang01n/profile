@@ -1,11 +1,14 @@
-import { useCallback } from "react";
+
 import {useState} from "react";
 
-export const useModal = (initialVisible = false) => {
-  const [isVisible, updateVisible] = useState(initialVisible);
-
-  const toggleModal = useCallback(() => {
-    updateVisible((prev) => !prev);
-  }, []);
+ const useModal = () => {
+  const [isVisible, updateVisible] = useState(false);
+  // const [modalId, setModalId] = useState(null); 
+  const toggleModal = (id) => {
+    // setModalId();
+    updateVisible(id !== null);
+    // console.log(`Modal visibility changed to: ${!isVisible}`)
+  };
   return {isVisible, toggleModal};
 };
+export default useModal;

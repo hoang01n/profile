@@ -4,7 +4,7 @@ import BaseRoutes from "./routers";
 import {GlobalStyle} from "./styles/global";
 import PreLoader from "./components/UIElements/Preloader";
 import {Suspense} from "react";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter  as Router} from "react-router-dom";
 
 // import Home from "./page/Home";
 
@@ -13,9 +13,14 @@ function App() {
     <>
       <GlobalStyle></GlobalStyle>
       <Suspense fallback={<PreLoader />}>
-        <BrowserRouter>
+        {/* <BrowserRouter> */}
+ <Router>
+
           <BaseRoutes />
-        </BrowserRouter>
+        
+ </Router>
+
+        {/* </BrowserRouter> */}
       </Suspense>
     </>
   );
