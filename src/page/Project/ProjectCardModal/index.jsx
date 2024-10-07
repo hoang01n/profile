@@ -20,7 +20,6 @@ const ProjectCardModal = () => {
   const {isVisible, toggleModal} = useModal();
 
   useEffect(() => {
-    // console.log("id modal",id)
     toggleModal(id);
     return () => toggleModal(null); 
   }, [id,toggleModal]);

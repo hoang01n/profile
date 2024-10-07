@@ -8,7 +8,8 @@ import {
 import {Title} from "../../../components/UIElements/TitlePrimary/TitlePrimary";
 import {AiTwotoneHtml5} from "react-icons/ai";
 import {FaSass, FaReact, FaCss3Alt, FaGitAlt} from "react-icons/fa";
-import {TbBrandJavascript} from "react-icons/tb";
+// import {TbBrandJavascript} from "react-icons/tb";
+import { IoLogoJavascript } from "react-icons/io5";
 import {SiRedux, SiTailwindcss, SiMui, SiTypescript} from "react-icons/si";
 
 const TeckSkills = () => {
@@ -32,7 +33,7 @@ const TeckSkills = () => {
             <FaCss3Alt size={64} />
           </li>
           <li>
-            <TbBrandJavascript size={64} />{" "}
+            < IoLogoJavascript  size={64} />{" "}
           </li>
           <li>
             <FaReact size={64} />

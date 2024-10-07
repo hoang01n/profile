@@ -26,14 +26,14 @@ const NavLinks = () => {
           Project
         </NavLink>
       </NavLinksItem>
-      <NavLinksItem key="resume">
+      {/* <NavLinksItem key="resume">
         <NavLink
           className={({isActive}) => (isActive ? "active" : "")}
           to="/resume"
         >
           Resume
         </NavLink>
-      </NavLinksItem>
+      </NavLinksItem> */}
       {/* <NavLinksItem key="contact">
         <NavLink
           className={({isActive}) => (isActive ? "active" : "")}
