@@ -1,5 +1,6 @@
   import cvImage from "../assets/Images/cv.png";
   import MovieApp from "../assets/Images/Movie.png";
+  import NoteApp from "../assets/Images/note.png"
   export const PROJECTS = [
     {
       id: "1",
@@ -24,7 +25,7 @@
     },
     {
       id: "2",
-      title: "react Movie",
+      title: "Movie",
       description: "This is a react Movie",
       image: {
         src: MovieApp,
@@ -34,6 +35,20 @@
         site: "https://movie-react-app-orpin.vercel.app/",
         repo: "https://github.com/hoang01n/Movie-react",
       },
-      technologies: ["react", "sass", "swiper"],
+      technologies: ["react", "sass", "swiper","react-loading"],
+    },
+    {
+      id: "3",
+      title: "Note",
+      description: "This is a note",
+      image: {
+        src: NoteApp,
+        placeholderSrc: "",
+      },
+      links: {
+        site: "https://note-zeta-swart.vercel.app/",
+        repo: "https://github.com/hoang01n/note",
+      },
+      technologies: ["react", "taiwincss", "nodejs", "mongoDB", "JWT"],
     },
   ];
